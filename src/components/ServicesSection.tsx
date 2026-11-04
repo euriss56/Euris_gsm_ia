@@ -1,56 +1,31 @@
-import serviceScreen from "@/assets/service-screen.jpg";
-import serviceBattery from "@/assets/service-battery.jpg";
-import serviceCharge from "@/assets/service-charge.jpg";
-import serviceUnlock from "@/assets/service-unlock.jpg";
-import serviceCamera from "@/assets/service-camera.jpg";
-import serviceWater from "@/assets/service-water.jpg";
+import { BatteryCharging, Camera, Laptop, MonitorSmartphone, ShieldCheck, Smartphone, Usb, Waves } from "lucide-react";
 
 const services = [
-  { title: "Écran cassé", desc: "Remplacement d'écran LCD/OLED toutes marques", img: serviceScreen },
-  { title: "Batterie", desc: "Remplacement de batterie avec pièces certifiées", img: serviceBattery },
-  { title: "Problème de charge", desc: "Réparation du port de charge USB-C / Lightning", img: serviceCharge },
-  { title: "Déblocage", desc: "Déblocage réseau et suppression de comptes", img: serviceUnlock },
-  { title: "Caméra", desc: "Réparation et remplacement du module caméra", img: serviceCamera },
-  { title: "Dégâts des eaux", desc: "Nettoyage et récupération après contact liquide", img: serviceWater },
+  { icon: Smartphone, number: "01", title: "Écran & affichage", desc: "Remplacement d’écrans cassés, tactiles défectueux et problèmes d’affichage." },
+  { icon: BatteryCharging, number: "02", title: "Batterie & autonomie", desc: "Diagnostic de batterie, remplacement et problèmes de décharge rapide." },
+  { icon: Usb, number: "03", title: "Charge & connectique", desc: "Ports de charge, connecteurs, faux contacts et problèmes d’alimentation." },
+  { icon: Camera, number: "04", title: "Caméra & composants", desc: "Dépannage des caméras, haut-parleurs, micros et boutons." },
+  { icon: Waves, number: "05", title: "Dégâts des liquides", desc: "Évaluation et prise en charge des appareils exposés à l’eau." },
+  { icon: Laptop, number: "06", title: "Ordinateurs & PC", desc: "Diagnostic matériel, dépannage logiciel et entretien informatique." },
 ];
 
-const ServicesSection = () => {
-  return (
-    <section id="services" className="py-24 px-6">
-      <div className="container mx-auto">
-        <h2 className="font-heading text-4xl md:text-5xl font-bold text-center mb-4">
-          Nos <span className="text-gradient">Services</span>
-        </h2>
-        <p className="text-muted-foreground text-center mb-16 max-w-xl mx-auto">
-          Des réparations professionnelles pour tous vos appareils mobiles
-        </p>
-
-        <div className="masonry">
-          {services.map((service, i) => (
-            <div
-              key={service.title}
-              className="group glass rounded-xl overflow-hidden cursor-pointer transition-all duration-300 hover:glow-primary-sm hover:border-primary/40"
-              style={{ animationDelay: `${i * 0.1}s` }}
-            >
-              <div className="overflow-hidden">
-                <img
-                  src={service.img}
-                  alt={service.title}
-                  className="w-full object-cover transition-transform duration-500 group-hover:scale-110"
-                />
-              </div>
-              <div className="p-5">
-                <h3 className="font-heading text-lg font-semibold mb-1 text-foreground">
-                  {service.title}
-                </h3>
-                <p className="text-sm text-muted-foreground">{service.desc}</p>
-              </div>
-            </div>
-          ))}
-        </div>
-      </div>
-    </section>
-  );
-};
+const ServicesSection = () => (
+  <section id="services" className="section services-section">
+    <div className="section-heading">
+      <div><div className="eyebrow">CE QUE NOUS FAISONS</div><h2>Une solution pour<br /><span>chaque panne.</span></h2></div>
+      <p>Du simple remplacement de composant au diagnostic plus poussé, nous prenons le temps de comprendre le problème avant d’intervenir.</p>
+    </div>
+    <div className="services-grid">
+      {services.map(({ icon: Icon, number, title, desc }) => (
+        <article className="service-card" key={number}>
+          <div className="service-card-top"><span>{number}</span><Icon size={25} strokeWidth={1.7} /></div>
+          <h3>{title}</h3><p>{desc}</p>
+          <a href="https://wa.me/2290141675784?text=Bonjour%20EURISS%20GSM%2C%20je%20souhaite%20des%20informations%20sur%20une%20r%C3%A9paration." aria-label={`Demander des informations sur ${title}`}>En savoir plus <span>↗</span></a>
+        </article>
+      ))}
+    </div>
+    <div className="service-note"><ShieldCheck size={19} /><span>Chaque appareil est examiné avant toute intervention. Le devis est communiqué avant la réparation.</span></div>
+  </section>
+);
 
 export default ServicesSection;
