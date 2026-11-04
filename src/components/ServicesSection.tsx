@@ -1,4 +1,4 @@
-import { BatteryCharging, Camera, Laptop, MonitorSmartphone, ShieldCheck, Smartphone, Usb, Waves } from "lucide-react";
+import { BatteryCharging, Camera, Laptop, ShieldCheck, Smartphone, Usb, Waves } from "lucide-react";
 
 const services = [
   { icon: Smartphone, number: "01", title: "Écran & affichage", desc: "Remplacement d’écrans cassés, tactiles défectueux et problèmes d’affichage." },
@@ -23,6 +23,16 @@ const ServicesSection = () => (
           <a href="https://wa.me/2290141675784?text=Bonjour%20EURISS%20GSM%2C%20je%20souhaite%20des%20informations%20sur%20une%20r%C3%A9paration." aria-label={`Demander des informations sur ${title}`}>En savoir plus <span>↗</span></a>
         </article>
       ))}
+    </div>
+    <div className="service-photo-gallery" aria-label="Photos de réparations réalisées en atelier">
+      <figure className="service-photo service-photo-phone">
+        <img src="https://images.pexels.com/photos/37688152/pexels-photo-37688152/free-photo-of-technician-fixing-smartphone-in-workshop.jpeg?auto=compress&cs=tinysrgb&w=1000" alt="Réparation minutieuse d’un smartphone" loading="lazy" />
+        <figcaption><strong>Réparation smartphone</strong><span>Précision & soin</span></figcaption>
+      </figure>
+      <figure className="service-photo service-photo-pc">
+        <img src="https://images.pexels.com/photos/33531806/pexels-photo-33531806/free-photo-of-technician-repairing-laptop-in-workshop.jpeg?auto=compress&cs=tinysrgb&w=1000" alt="Technicien effectuant un diagnostic sur un ordinateur portable" loading="lazy" />
+        <figcaption><strong>Maintenance informatique</strong><span>Diagnostic & dépannage PC</span></figcaption>
+      </figure>
     </div>
     <div className="service-note"><ShieldCheck size={19} /><span>Chaque appareil est examiné avant toute intervention. Le devis est communiqué avant la réparation.</span></div>
   </section>
