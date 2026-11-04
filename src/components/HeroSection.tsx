@@ -20,7 +20,7 @@ const HeroSection = () => (
       </div>
       <div className="hero-visual">
         <div className="hero-image-frame">
-          <img src="https://images.unsplash.com/photo-1580910051074-3eb694886505?auto=format&fit=crop&w=1100&q=85" alt="Smartphone moderne dans un atelier de réparation" />
+          <img src="https://images.pexels.com/photos/37688152/pexels-photo-37688152/free-photo-of-technician-fixing-smartphone-in-workshop.jpeg?auto=compress&cs=tinysrgb&w=1400" alt="Technicien réparant un smartphone dans un atelier professionnel" loading="eager" fetchPriority="high" />
           <div className="image-shade" />
           <div className="floating-note"><span className="note-icon"><Wrench size={18} /></span><span><strong>Un appareil en panne ?</strong><small>On vous aide à trouver la solution.</small></span></div>
           <div className="image-index">01 <i /> EURISS GSM</div>
